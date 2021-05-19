@@ -1,0 +1,4 @@
+(a) "Who goes with F\145rgus?\012"： 指的是Who goes with Fergus? （字符串）其中\145是字符e,\012是一个换行符
+(b) 3.14e1L ：是一个科学计数法表示的扩展精度浮点数（Long double） ，大小为3.14*10=31.4。
+(C) 1024f : Float单精度浮点数型
+(d) 3.14L：Long Double 扩展精度浮点数型
