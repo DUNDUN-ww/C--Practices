@@ -1,0 +1,4 @@
+(a)std::cin >>int input_ value; //定义了输入input_ value为int型，输入不应该定义，改正后是std::cin >>int input_ value;
+(b) int i={ 3.14 };//定义了int型变量，但是赋值3.14给i，会造成小数部分丢失。
+(C) double salary = wage = 9999.99;//应该分别赋值，不能直接用赋值运算符链接，改正后是 double salary, wage;   salary = wage = 9999.99;
+(d) int i =3.14; //定义了int型变量，但是赋值3.14给i，会造成小数部分丢失。与（b）相同
