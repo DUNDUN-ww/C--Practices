@@ -1,0 +1,13 @@
+std::string global_str;
+int global_int;
+int main()
+{
+   int local_int;
+   std::string local_str;
+}
+
+对于string类型的变量来说，因为string类型本身接受unsigned的初始化方式，所以无论在函数内还是外都被默认初始化为空串。
+
+对于内置类型int来说，变量glogal_int定义在所有函数体之外，
+根据C++的规定，global_int默认初始化为0；而变量local_int定义在main函数的内部，将不被初始化，
+如果程序试图拷贝或输出未初始化的变量，将遇到一个未定义的奇异值。
