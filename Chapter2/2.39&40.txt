@@ -1,0 +1,22 @@
+
+2.39
+#include<iostream>
+using namespace std;
+
+struct Foo {/*this is nothing */ };  //注意：类体右侧表示结束的花括号之后必须写一个分号
+
+int main()
+{
+	return 0;
+}
+2.40
+#include<iostream>
+using namespace std;
+
+struct Sales_data {
+	string bookNo;              //书籍编号
+	unsigned units_sold = 0;    //销售量
+	double sellingprice = 0.0;  //零售价
+	double saleprice = 0.0;     //实售价
+	double discount = 0.0;      //折扣
+};
