@@ -1,0 +1,29 @@
+2.36
+int a = 3, b = 4;      
+decltype(a) c = a;     // 使用不加括号变量相当于 int c = a；
+decltype((b)) d = a;   // 使用加括号变量相当于 int &d = a；d是a的引用
+++c;                   // ++c之后的值为3+1=4；
+++d;                   // ++d之后的值为3+1= 4；
+
+2.37
+//如果i是int，则表达式i = x的类型是int&
+int a = 3,b = 4;// a的值是3，b的值是4 ，都是int型
+decltype(a) c = a; //不加括号相当于 int c = a,c的值是3，c是int型
+decltype(a = b) d = a;// 相当于 int &d = a；d是a的引用， d的值是3，int型
+
+2.38
+Q：说明由decltype指定类型和由auto指定类型有何区别。
+请举出一个例子，decltype指定的类型与auto指定的类型一样:
+再举一个例子，decltype指定的类型与auto指定的类型不一样。
+A：auto类型说明符 用编译器计算的初始值 来判断其类型，而decltype虽然也让编译器分析表达式并得到它的类型，但是不实际 计算表达式的值。
+编译器推断出来的auto类型有时候和初始值类型并不完全一样，编译器会适当的改变结果类型使其更符合初始化规则。
+与auto不同，decltype的结果类型与表达式形式密切相关，如果变量名加上了一对括号，则得到的类型与不加括号时会有不同
+	
+  int a = 3;
+	auto c1 = a;//c1是int
+	decltype(a)c2 = a;//int c2 = a;
+	decltype((a))c3 = a;//int &c3 = a;
+
+	const int d = 5;
+	auto f1 = d;//f1是int
+	decltype(d)f2 = d; //const int f2 = d;
