@@ -1,0 +1,26 @@
+2.35 
+const int i = 42;//i是int
+auto j = i; //j是int
+const auto &k = i; //k是int
+auto *p=&i; //p是int const*
+const auto j2 = i，&k2 = i;//j2和k2是int
+代码：
+#include<iostream>
+#include<typeinfo>
+using namespace std;
+int main()
+{
+	const int i = 42;
+	auto j = i;
+	const auto& k = i;
+	auto* p = &i;
+	const auto j2 = i, &k2 = i;
+
+	cout << typeid(i).name() << endl;//int
+	cout << typeid(j).name() << endl;//int
+	cout << typeid(k).name() << endl;//int
+	cout << typeid(p).name() << endl;//int const *
+	cout << typeid(j2).name() << endl;//int
+	cout << typeid(k2).name() << endl;//int
+	return 0;
+}
