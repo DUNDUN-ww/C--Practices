@@ -1,0 +1,17 @@
+3.18
+不合法
+正确的：
+vector<int> ivec;
+int num = 42;
+ivec.push_back(num);
+
+3.19
+方法1：vector<int> numVec(10, 42);
+方法2：vector<int> numVec{42,42,42,42,42,42,42,42,42,42};
+
+方法3：vector<int> numVec;
+int num = 42;
+for(int i = 0;i < 10;i++)
+{
+ivec.push_back(num);
+}
