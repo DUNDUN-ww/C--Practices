@@ -1,0 +1,17 @@
+3.9
+3.11 
+不合法，s未赋初始值为空，没有s[0];
+合法，类型为char
+3.12
+vector<vector<int>> ivec;//正确,创造了元素为vector的vector对象；
+vector<string> svec = ivec;//错误,元素类型不一样；
+vector<string> svec(10, "null");//正确,创建了10个 string 类型的元素，每个元素都初始化为“null”。
+
+3.13
+vector<int> v1;// 包含 0 个元素
+vector<int> v2(10);//包含 10 个元素，初始化为 0
+vector<int> v3(10, 42);//包含 10 个元素，初始化为 42
+vector<int> v4{ 10 };// 包含 1 给元素，初始化为 10
+vector<int> v5{ 10, 42 };//包含 2 个元素，初始化为 10 和 42
+vector<string> v6{ 10 };//包含 10 个元素， 初始化为空字符串
+vector<string> v7{ 10, "hi" };//包含 10 个元素，初始化为 hi 
