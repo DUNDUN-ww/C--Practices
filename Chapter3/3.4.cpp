@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
 
 int main()
 {
@@ -15,7 +18,16 @@ int main()
 	}
 	else
 	{
-		cout << "两个字符串不相等" << endl;
+		if (line1 > line2)
+		{
+			cout << line1 << endl;
+		}
+		else
+		{
+			
+			cout << line2 << endl;
+			cout << "是更大的字符串" << endl;
+		}
 	}
 	if (line1.size() == line2.size())
 	{
@@ -27,3 +39,4 @@ int main()
 	}
 	return 0;
 }
+
