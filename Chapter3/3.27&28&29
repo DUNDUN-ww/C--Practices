@@ -1,0 +1,17 @@
+3.27 
+unsigned buf_size = 1024; 
+(a) int ia[buf_size];// 非法,buf_size 不是常量表达式；
+(b) int ia[4 * 7 - 14];//合法
+(c) int ia[txt_size()];//非法,txt_size() 只有在编译的时候才能确定其值，只有 txt_size() 是 constexpr 时正确，否则错误
+(d) char st[11] = "fundamental";//非法,,没有空间存放空字符。数组大小必须>11
+
+3.28
+string sa[10];//sa：空字符串
+int ia[10];//ia：0
+int main() {
+  string sa2[10];//sa2：空字符串
+  int ia2[10];//ia2：全部未定义,不确定
+}
+
+3.29
+数组的大小是确定不变的，不能随意向数组中增加元素，丧失了 vectoer 的灵活性，容易造成内存浪费。
