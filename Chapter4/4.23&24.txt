@@ -1,0 +1,17 @@
+4.23
+string s = "word";
+string pl = s + s[s.size() - 1] == 's' ? "" : "s" ;
+A：
+加法运算符优先级要高于条件运算符
+string pl = s + (s[s.size() - 1] == 's' ? "" : "s") ;
+
+4.24
+本节的示例程序将成绩划分为high pass、pass、和fail三种，它的依据是条件运算符满足右结合律。假如条件运算符满足的是左结合律，求值的过程将是怎样的？
+
+解：
+
+如果条件运算符满足的是左结合律。那么
+
+finalgrade = (grade > 90) ? "high pass" : (grade < 60) ? "fail" : "pass"; 
+等同于 finalgrade = ((grade > 90) ? "high pass" : (grade < 60)) ? "fail" : "pass"; 
+假如此时 grade > 90 ，第一个条件表达式的结果是 "high pass" ，而字符串字面值的类型是 const char *，非空所以为真。因此第二个条件表达式的结果是 "fail"。这样就出现了自相矛盾的逻辑。
