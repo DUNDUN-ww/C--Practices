@@ -1,0 +1,10 @@
+3.37
+const char ca[] = { 'h', 'e', 'l', 'l', 'o' };//ca没有空字符结尾，循环可能不会停止
+	const char *cp = ca;
+	while (*cp) {
+		cout << *cp << endl;
+		++cp;
+	}
+  
+3.38
+指针相加实际为地址相加，没有任何意义
