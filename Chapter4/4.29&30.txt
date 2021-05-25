@@ -1,0 +1,19 @@
+	4.29
+  int x[10];//x为int数组包含10个元素
+	int* p = x;	//p为一个指针，所指对象为变量x
+  
+	sizeof(x) / sizeof(*x)//输出10
+	//sizeof(x)为10个int值所占的内存空间总和
+	//sizeof(*x)相当于sizeof(int)，即int所占的空间
+
+  
+  sizeof(p) / sizeof(*p)//输出1
+  
+	//sizeof(p)的运算对象p是一个指针，求值结果是指针所占的空间大小，指针也是int型
+	//sizeof(*p)的运算对象*p是指针p所指的对象，即int变量x，所以求值结果是int值所占的空间大小
+
+4.30
+(a) sizeof x + y      // sizeof (x + y)
+(b) sizeof(p->mem[i]) // sizeof p->mem[i] ，无需添加括号
+(c) sizeof(a) < b     // sizeof (a < b)    
+(d) sizeof(f())       // sizeof f() 
