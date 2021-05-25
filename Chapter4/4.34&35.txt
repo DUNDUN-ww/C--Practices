@@ -1,0 +1,22 @@
+4.34
+float  fval;
+double dval;
+int    ival;
+（a）if(fval)//float型变量fval自动转换成布尔值，转换规则是非0值转换为true，0转换为false
+（b）dval = fval +ival//ival转换成float，与fval求和后所得结果进一步转换成double类型
+（b）dval = fval +ival//ival转换成float，与fval求和后所得结果进一步转换成double类型
+
+4.35
+char cval; 
+int ival; 
+unsigned int ui;
+float fval;
+double dval;
+(a)cval = 'a'+3;
+//字符a提升为int，与3相加所得的结果在转换为char并赋给cval。
+(b)fval = ui - ival*1.0;
+//ival转换为double，与1.0相乘的结果也是double类型，ui转换为double，相减，结果转换为float并赋给fval
+(c)dval = ui *fval;
+//ui转换float，与fval相乘的结果转换为double类型并赋给dval
+(d)cval = ival+fval+dval;
+//ival转换为float，与fval相加所得的结果转换为double类型，再与dval相加后结果转换为char类型
