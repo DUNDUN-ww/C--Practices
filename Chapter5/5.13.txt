@@ -1,0 +1,41 @@
+(a) unsigned aCnt = 0, eCnt = 0, iouCnt = 0;
+    char ch = next_text();
+    switch (ch) {
+        case 'a': aCnt++;//缺break
+        case 'e': eCnt++;//缺break
+        default: iouCnt++;//缺break
+    }
+(b) unsigned index = some_value();
+    switch (index) {
+        case 1:
+            int ix = get_value();//应在在外部定义ix
+            ivec[ ix ] = index;
+            break;
+        default:
+            ix = ivec.size()-1;
+            ivec[ ix ] = index;
+    }
+(c) unsigned evenCnt = 0, oddCnt = 0;
+    int digit = get_num() % 10;
+    switch (digit) {
+        case 1, 3, 5, 7, 9://应该用冒号，不是逗号
+            oddcnt++;
+            break;
+        case 2, 4, 6, 8, 10://应该用冒号，不是逗号
+            evencnt++;
+            break;
+    }
+(d) unsigned ival=512, jval=1024, kval=4096;
+    unsigned bufsize;
+    unsigned swt = get_bufCnt();
+    switch(swt) {
+        case ival://case标签必须是整型常量表达式。
+            bufsize = ival * sizeof(int);
+            break;
+        case jval:
+            bufsize = jval * sizeof(int);
+            break;
+        case kval:
+            bufsize = kval * sizeof(int);
+            break;
+    }
