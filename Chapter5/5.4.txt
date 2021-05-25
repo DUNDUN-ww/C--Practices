@@ -1,0 +1,16 @@
+说明下列例子的含义，如果存在问题，试着修改它。
+
+(a) while (string::iterator iter != s.end()) { /* . . . */ }
+
+(b) while (bool status = find(word)) { /* . . . */ }
+		if (!status) { /* . . . */ }
+A:
+a)非法，原意while语句的控制结构当中定义一个string：：itertor类型的变量iter，然后判断iter是否达到了s的末尾，只要未到就执行循环。
+但该式把变量的定义和关系混合在了一起，如果要使用iter与其他值比较，必须为iter赋初值
+string::iterator iter = s.begin();
+b)这个循环的while和if是两个独立的语句，if语句中无法访问status变量，正确的做法是应该将if语句包含在while里面。
+while (iter !=s.end())
+{
+	++iter;
+	/*...*/
+}
