@@ -1,0 +1,19 @@
+4.36
+i* = static_cast<int>(d);
+//使用static_cast把double类型的变量d强制转换成int类型
+
+4.37
+int i;
+double d;
+const string *ps;
+char *pc;
+viod *pv;
+//利用static_cast强制转换,对于底层const则使用const_cast
+(a)pv = (void*)ps;//pv = static_cast<void*>(const_cast<string*>(ps));
+(b)i = int(*pc);//i = static_cast<int>(*pc);
+(c)pv = &d;//pv = static_cast<void*>(&d);
+(d)pc = (char*)pv;//pc = static_cast<char*>(pv);
+
+4.38
+double slope = static_cast<double>(j/i);
+//把j/i的值简直转化成double，然后赋值给slope
