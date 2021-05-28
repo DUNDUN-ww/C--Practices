@@ -1,0 +1,20 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	cout << "请依次输入被除数和除数" << endl;
+	int ival1, ival2;
+	cin >> ival1 >> ival2;
+	if (ival2 == 0)
+	{
+		throw runtime_error("除数不能为零");
+	}
+	cout << "两个数相除的结果是 " << ival1 / ival2 << endl;
+	return 0;
+}
+
+
+0x753AA6F2 处(位于 Chapter2.exe 中)引发的异常: Microsoft C++ 异常: std::runtime_error，位于内存位置 0x007FFBFC 处。
+0x753AA6F2 处(位于 Chapter2.exe 中)有未经处理的异常: Microsoft C++ 异常: std::runtime_error，位于内存位置 0x007FFBFC 处。
