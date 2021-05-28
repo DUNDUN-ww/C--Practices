@@ -1,0 +1,14 @@
+//向后跳过一个带初始化的变量定义是合法的
+begin:
+int sz = get_ size() ;
+if (sz<= 0) {
+goto begin;
+}
+在上面的代码中，goto 语句执行后将销毁sz。因为跳回到begin的动作跨过了sz的定义语句，所以sz将重新定义并初始化。
+
+
+int sz;
+	do
+	{
+		sz = get_size();
+	} while (sz <= 0);
