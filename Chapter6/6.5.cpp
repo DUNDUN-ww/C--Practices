@@ -3,16 +3,18 @@
 #include <vector>
 using namespace std;
 
-int fact(int InputNumber)//函数的声明及定义
+// 例子
+int count_add(int n)       // n是形参
 {
-	InputNumber = abs(InputNumber);
-	return InputNumber;
+    static int ctr = 0;    // ctr 是局部静态变量
+    ctr += n;
+    return ctr;
 }
-void main()
+
+int main()
 {
-	cout << "请输入需要计算绝对值的数字:";
-	int Input;
-	cin >> Input;
-	int Output = fact(Input);//函数的调用部分
-	cout << Input << "的绝对值为：" << Output << endl;
+    for (int i = 0; i != 10; ++i)  // i 是局部变量
+        cout << count_add(i) << endl;
+
+    return 0;
 }
