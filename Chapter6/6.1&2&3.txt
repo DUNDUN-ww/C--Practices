@@ -1,0 +1,16 @@
+6.1
+实参和形参的区别的什么？
+解：实参是函数调用的实际值，是形参的初始值。
+
+6.2
+(a) int f() {//应该是String
+         string s;
+         // ...
+         return s;
+   }
+(b) f2(int i) { /* ... */ }//Void f2(int i)
+(c) int calc(int v1, int v1) { /* ... */ } //return没加
+(d) double square (double x)  return x * x; //应该有大括号
+
+6.3
+对
