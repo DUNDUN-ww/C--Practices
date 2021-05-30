@@ -20,3 +20,5 @@ void main()
 	exchange(val1, val2);
 	cout << "交换之后的两数：" << val1 << " " << val2 << endl;
 }
+
+//引用更好用
