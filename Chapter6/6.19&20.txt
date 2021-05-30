@@ -1,0 +1,13 @@
+6.19
+double calc(double);
+int count(const string &, char);
+int sum(vector<int>::iterator, vector<int>::iterator, int);
+vector<int> vec(10);
+(a) calc(23.4, 55.1);// 不合法,calc只有一个参数。
+(b) count("abcda",'a');//合法
+(c) calc(66);//合法
+(d) sum(vec.begin(), vec.end(), 3.8);//合法
+
+6.20
+应该尽量将引用形参设为常量引用，除非有明确的目的是为了改变这个引用变量。 
+如果形参应该是常量引用，而我们将其设为了普通引用，那么常量实参将无法作用于普通引用形参。
