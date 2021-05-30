@@ -1,0 +1,17 @@
+6.16
+bool is_empty(string& s) { return s.empty(); }
+
+局限性在于常量字符串和字符串字面值无法作为该函数的实参，如果下面这样调用是非法的：
+const string str;
+bool flag = is_empty(str); //非法
+bool flag = is_empty("hello"); //非法
+所以要将这个函数的形参定义为常量引用：
+bool is_empty(const string& s) { return s.empty(); }
+
+6.17
+编写一个函数，判断string对象中是否含有大写字母。 编写另一个函数，把string对象全部改写成小写形式。 在这两个函数中你使用的形参类型相同吗？为什么？
+解：两个函数的形参不一样。第一个函数使用常量引用，第二个函数使用普通引用。
+
+6.18
+(a) bool compare(matrix &m1, matrix &m2);//compare的函数，返回布尔值，两个参数都是matrix类的引用。
+(b)  vector<int>::iterator change_val(int, vector<int>::iterator);//名为change_val的函数，返回vector的迭代器，有两个参数：一个是int，另一个是vector的迭代器。
