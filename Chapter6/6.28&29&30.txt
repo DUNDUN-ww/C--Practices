@@ -1,0 +1,11 @@
+6.28
+在error_msg函数的第二个版本中包含ErrCode类型的参数，其中循环内的elem是什么类型？
+解：elem是const string &类型。
+
+6.29
+在范围for循环中使用initializer_list对象时，应该将循环控制变量声明成引用类型吗？为什么？
+解：应该使用常量引用类型。initializer_list对象中的元素都是常量，我们无法修改initializer_list对象中的元素的值。
+
+6.30
+编译第200页的str_subrange函数，看看你的编译器是如何处理函数中的错误的。
+解：error: return-statement with no value, in function returning ‘bool’ [-fpermissive]
