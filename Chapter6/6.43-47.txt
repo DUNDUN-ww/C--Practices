@@ -1,0 +1,17 @@
+6.43
+(a) inline bool eq(const BigInt&, const BigInt&) {...}
+(b) void putValues(int *arr, int size);
+全部都放进头文件。(a) 是内联函数，(b) 是声明。
+
+6.44
+将6.2.2节的isShorter函数改写成内联函数。
+inline bool is_shorter(const string &lft, const string &rht) 
+{
+    return lft.size() < rht.size();
+}
+练习6.45
+一般来说，内联机制用于优化规模小、流程直接、频繁调用的函数。
+
+练习6.46
+能把isShorter函数定义成constexpr函数吗？ 如果能，将它改写成constxpre函数；如果不能，说明原因。
+A: 不能。constexpr函数的返回值类型及所有形参都得是字面值类型。
