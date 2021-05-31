@@ -1,0 +1,8 @@
+(a) int ff(int a, int b = 0, int c = 0);// 正确
+(b) char *init(int ht = 24, int wd, char bckgrnd);//错误。因为一旦某个形参被赋予了默认值，那么它之后的形参都必须要有默认值\
+
+6.41
+char *init(int ht, int wd = 80, char bckgrnd = ' ');
+(a) init();//非法。第一个参数不是默认参数，最少需要一个实参。
+(b) init(24,10);//合法,默认实参
+(c) init(14,'*');//合法，但与初衷不符。字符*被解释成int传入到了第二个参数。而初衷是要传给第三个参数。
