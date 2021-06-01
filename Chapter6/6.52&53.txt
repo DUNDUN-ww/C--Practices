@@ -1,0 +1,13 @@
+6.52
+(a) manip('a', 'z');//第3级。类型提升实现的匹配。
+(b) manip(55.4, dobj);//第4级。算术类型转换实现的匹配。
+
+6.53
+说明下列每组声明中的第二条语句会产生什么影响，并指出哪些不合法（如果有的话）。
+(a) int calc(int&, int&); 
+	int calc(const int&, const int&); 
+(b) int calc(char*, char*);
+	int calc(const char*, const char*);
+(c) int calc(char*, char*);
+	int calc(char* const, char* const);//不合法。顶层const重复声明
+
