@@ -1,0 +1,5 @@
+说明下面这个循环的含义，它对assert的使用合理吗？
+
+string s;
+while (cin >> s && s != sought) { } //空函数体
+assert(cin);//不合理。从这个程序的意图来看，应该用assert(s == sought);
