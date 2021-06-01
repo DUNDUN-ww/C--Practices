@@ -1,0 +1,10 @@
+6.49
+候选函数：与被调用函数同名，并且其声明在调用点可见。 
+可行函数：形参与实参的数量相等，并且每个实参类型与对应的形参类型相同或者能转换成形参的类型。
+
+6.50
+(a) f(2.56, 42)//void f(int, int);和void f(double, double = 3.14);是可行函数。 该调用具有二义性而不合法。
+(b) f(42)// void f(int); 是可行函数。调用合法。
+(c) f(42, 0)//void f(int, int);和void f(double, double = 3.14);是可行函数。 void f(int, int);是最佳匹配。
+(d) f(2.56, 3.14)//void f(int, int);和void f(double, double = 3.14);是可行函数。 void f(double, double = 3.14);是最佳匹配。
+
