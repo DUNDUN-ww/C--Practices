@@ -1,0 +1,7 @@
+if (read(read(cin, data1), data2)) 
+
+相当于是
+read(std::cin, data1);
+read(std::cin, data2);
+
+read函数的返回值是istream对象， if语句中条件部分的作用是从输入流中读取数据给两个data对象。
