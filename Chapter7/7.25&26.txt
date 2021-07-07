@@ -1,0 +1,12 @@
+25
+Screen能安全地依赖于拷贝和赋值操作的默认版本吗？ 如果能，为什么？如果不能？为什么？
+A: 能。 Screen的成员只有内置类型和string，因此能安全地依赖于拷贝和赋值操作的默认版本。
+
+26
+将Sales_data::avg_price定义成内联函数。
+A：
+在头文件中加入：
+inline double Sales_data::avg_price() const
+{
+    return units_sold ? revenue/units_sold : 0;
+}
