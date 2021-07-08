@@ -1,0 +1,11 @@
+如果返回类型是Screen，那么move返回的是*this的一个副本，因此set函数只能改变临时副本而不能改变myScreen的值。
+
+29 
+推测正确
+
+30  
+使用指针访问成员的
+优点：
+函数的参数可以与成员同名，如 void setAddr(const std::string &addr) { this->addr = addr; }
+缺点：
+有时候显得有点多余，如 std::string getAddr() const { return this->addr; }
