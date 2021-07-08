@@ -1,0 +1,1 @@
+如果返回类型是Screen，那么move返回的是*this的一个副本，因此set函数只能改变临时副本而不能改变myScreen的值。
