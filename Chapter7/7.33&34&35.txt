@@ -16,3 +16,23 @@ pos Screen::size() const
 解：
 在 dummy_fcn(pos height) 函数中会出现 未定义的标识符pos。
 类型名的定义通常出现在类的开始处，这样就能确保所有使用该类型的成员都出现在类名的定义之后。
+
+35
+typedef string Type;
+Type initVal(); 
+class Exercise {
+public:
+    typedef double Type;
+    Type setVal(Type);
+    Type initVal(); 
+private:
+    int val;
+};
+Type Exercise::setVal(Type parm) { 
+    val = parm + initVal();     
+    return val;
+}
+
+A: 
+在类中，如果成员使用了外层作用域中的某个名字，而该名字代表一种类型，则类不能在之后重新定义该名字。重复定义Type是错误的行为。
+虽然重复定义类型名字是错误的行为，但是编译器并不为此负责。
