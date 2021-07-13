@@ -1,0 +1,29 @@
+38
+Sales_data(std::istream &is = std::cin) { read(is, *this); }//提供cin作为接受istream&参数的构造函数的默认实参
+
+39
+如果接受string的构造函数和接受istream&的构造函数都使用默认实参，不合法。
+当调用Sales_data()构造函数时，无法区分是哪个重载。
+
+40
+
+(a) Book.
+using namespace std;
+class Book 
+{
+public:
+    Book(unsigned isbn, string const& name, string const& author, string const& pubulisheddate_)
+        :isbn_(isbn), name_(name), author_(author), pubdate_(pubulisheddate_)
+    { }
+
+    explicit Book(istream &in) 
+    { 
+        in >> isbn_ >> name_ >> author_ >> pubulisheddate_;
+    }
+
+private:
+    unsigned isbn_;
+    string name_;
+    string author_;
+    string pubulisheddate_;
+};
