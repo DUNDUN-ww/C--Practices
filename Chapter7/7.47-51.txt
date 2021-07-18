@@ -1,0 +1,36 @@
+解：
+一个string参数的Sales_ data 构造函数是否应该是explicit依赖于我们对用户使用该转换的看法。
+这对于Sales_data，这种转换可能是对的。null_book中的string可能表示了一个不存在的ISBN编号。
+
+优点：可以抑制构造函数定义的隐式转换
+缺点：为了转换要显式地使用构造函数
+
+7.48
+这些定义和是不是explicit的无关。
+
+7.49
+(a) Sales_data &combine(Sales_data); // ok
+(b) Sales_data &combine(Sales_data&); // 无法将参数从“string”转换为“Sales_data &”，因为隐式转换只有一次
+(c) Sales_data &combine(const Sales_data&) const; // 该成员函数是const 的，意味着不能改变对象。而 combine函数的本意就是要改变对象
+
+7.50
+explicit Person(std::istream &is){ read(is, *this); }
+
+在C++中，我们有时可以将构造函数用作自动类型转换函数。但这种自动特性并非总是合乎要求的，有时会导致意外的类型转换。
+因此，C++新增了关键字explicit，用于关闭这种自动特性。
+被explicit关键字修饰的类构造函数，不能进行自动地隐式类型转换，只能显式地进行类型转换。
+注意：只有一个参数的构造函数，或者构造函数有n个参数，但有n-1个参数提供了默认值，这样的情况才能进行类型转换。
+
+
+7.51
+vector将其单参数的构造函数定义成explicit的，而string则不是，你觉得原因何在？
+A：
+假如我们有一个这样的函数：
+int getSize(const std::vector<int>&);
+如果vector没有将单参数构造函数定义成explicit的，我们就可以这样调用：getSize(34);
+函数实际上会初始化一个拥有34个元素的vector的临时量，然后返回34。但是这样没有任何意义。
+
+而string则不同，string的单参数构造函数的参数是const char*，
+凡是在需要用到string的地方都可以用 const char *来代替（字面值就是const char *）。如：
+void print(std::string);
+print("hello world");
