@@ -1,0 +1,26 @@
+7.52
+Sales_data 类不是聚合类
+改成：
+struct Sales_data {
+    std::string bookNo;
+    unsigned units_sold;
+    double revenue;
+};
+
+
+7.53
+class Debug {
+public:
+    constexpr Debug(bool b = true) : hw(b), io(b), other(b) { }
+    constexpr Debug(bool h, bool i, bool o) : hw(r), io(i), other(0) { }
+
+    constexpr bool any() { return hw || io || other; }
+    void set_hw(bool b) { hw = b; }
+    void set_io(bool b) { io = b; }
+    void set_other(bool b) { other = b; }
+    
+private:
+    bool hw;       //硬件错误，而非I0错误
+    bool io;        //IO错误
+    bool other;     //其他错误
+};
