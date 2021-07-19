@@ -1,0 +1,1 @@
+std::list<std::deque<int>> l;//list对象，其元素类型是int的deque。
