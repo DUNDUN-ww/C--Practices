@@ -1,0 +1,11 @@
+9.11
+vector<int> vec;    // 0
+vector<int> vec(10);    // 10个0
+vector<int> vec(10, 1);  // 10个1
+vector<int> vec{ 1, 2, 3, 4, 5 }; // 1, 2, 3, 4, 5
+vector<int> vec(other_vec); // 拷贝 other_vec 的元素
+vector<int> vec(other_vec.begin(), other_vec.end()); // 拷贝 other_vec 的元素
+
+9.12
+接受一个容器创建其拷贝的构造函数，必须容器类型和元素类型都相同。
+接受两个迭代器创建拷贝的构造函数，只需要元素的类型能够相互转换，容器类型和元素类型可以不同。
