@@ -1,0 +1,3 @@
+std::list<const char*> l { "hello", "world" };
+std::vector<std::string> v;
+v.assign(l.cbegin(), l.cend());//将一个list中的char *指针元素赋值给一个vector中的string。
