@@ -1,0 +1,11 @@
+9.9
+begin 返回的是普通迭代器，cbegin 返回的是常量迭代器。
+
+9.10
+vector<int> v1;
+const vector<int> v2;
+auto it1 = v1.begin(), it2 = v2.begin();
+auto it3 = v1.cbegin(), it4 = v2.cbegin();
+//it1 是 vector<int>::iterator
+//it2，it3 和 it4 是 vector<int>::const_iterator
+
