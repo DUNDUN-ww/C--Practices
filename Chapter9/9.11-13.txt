@@ -9,3 +9,10 @@ vector<int> vec(other_vec.begin(), other_vec.end()); // 拷贝 other_vec 的元�
 9.12
 接受一个容器创建其拷贝的构造函数，必须容器类型和元素类型都相同。
 接受两个迭代器创建拷贝的构造函数，只需要元素的类型能够相互转换，容器类型和元素类型可以不同。
+
+9.13
+list<int> ilst(5, 4);
+vector<int> ivc(5, 5);
+
+vector<double> dvc(ilst.begin(), ilst.end());//一个list<int>初始化一个vector<double>
+vector<double> dvc2(ivc.begin(), ivc.end());//从一个vector<int>初始化一个vector<double>
