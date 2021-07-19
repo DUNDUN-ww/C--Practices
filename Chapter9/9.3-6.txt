@@ -1,0 +1,33 @@
+9.3
+两个迭代器 begin 和 end满足
+1. 它们指向同一个容器中的元素，或者是容器最后一个元素之后的位置。
+2. 我们可以通过反复递增begin来到达end。换句话说，end 不在begin之前。
+
+9.4
+bool find(vector<int>::const_iterator begin,vector<int>::const_iterator end, int i){
+while(begin++ != end){
+if(*begin == i)return true;
+}
+return false;
+}
+
+9.5
+vector<int>::const_iterator find(vector<int>::const_iterator begin, vector<int>::const_iterator end, int i)
+{
+	while (begin != end)
+	{
+		if (*begin == i) 
+			return begin;
+		++begin;
+    }	
+    return end;
+}
+
+9.6
+下面的程序有何错误？你应该如何修改它？
+list<int> lst1;
+list<int>::iterator iter1 = lst1.begin(),
+					          iter2 = lst1.end();
+while (iter1 < iter2) //begin一定<end, 没有可比性
+应修改成如下：
+while (iter1 != iter2)
