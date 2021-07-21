@@ -1,0 +1,31 @@
+练习9.21
+//使用insert返回值将元素添加到list中的循环程序
+改写为
+将元素插入到vector中，分析循环将如何工作。
+
+解：
+第一次调用 insert 会将刚刚读入的 string 插入到 iter 所指向的元素之前的位置。
+insert 返回的迭代器恰好指向这个新元素。
+我们将此迭代器赋予 iter 并重复循环，读取下一个单词。
+只要继续有单词读入，每次 while 循环就会将一个新元素插入到 iter 之前，并将 iter 改变为新加入元素的尾置。此元素为（新的）首元素。
+因此，每步循环将一个元素插入到 list 首元素之前的位置。
+
+9.22
+vector<int>::iterator iter = iv.begin(), mid = iv.begin() + iv.size() / 2;
+while (iter != mid)//iv是一个int的vector
+	if (*iter == some_val)
+		iv.insert(iter, 2 * some_val);
+1. 循环不会结束
+2. 迭代器可能会失效
+
+改为：
+
+while (iter != mid)
+{
+	if (*iter == some_val)
+	{
+		iter = iv.insert(iter, 2 * some_val);
+		++iter;
+    }
+	++iter;
+}
