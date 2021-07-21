@@ -1,0 +1,20 @@
+9.15 
+  //判定两个vector是否相等。
+    std::vector<int> vec1{ 1, 2, 3, 4, 5 };
+    std::vector<int> vec2{ 1, 2, 3, 4, 5 };
+    std::vector<int> vec3{ 1, 2, 3, 4 };
+    std::cout << (vec1 == vec2 ? "true" : "false") << std::endl;
+    std::cout << (vec1 == vec3 ? "true" : "false") << std::endl;
+
+9.16
+
+    std::list<int>      li{ 1, 2, 3, 4, 5 };
+    std::vector<int>    vec2{ 1, 2, 3, 4, 5 };
+    std::vector<int>    vec3{ 1, 2, 3, 4 };//比较一个list中的元素和一个vector中的元素。
+
+    std::cout << (std::vector<int>(li.begin(), li.end()) == vec2 ? "true" : "false") << std::endl;
+    std::cout << (std::vector<int>(li.begin(), li.end()) == vec3 ? "true" : "false") << std::endl;
+
+9.17
+假定c1 和 c2 是两个容器，	if (c1 < c2)中c1 和 c2 必须是相同类型的容器 并且 保存相同类型的元素。
+并且元素类型要支持关系运算符
