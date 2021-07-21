@@ -1,0 +1,2 @@
+deque<string> input; 
+//改为list<string> input;
