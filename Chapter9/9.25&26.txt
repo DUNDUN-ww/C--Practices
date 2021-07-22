@@ -1,0 +1,24 @@
+9.25
+如果 elem1 和 elem2 相等，那么不会发生任何操作。
+如果elem2 是尾后迭代器，那么删除从 elem1 到最后的元素。
+如果elem1 和 elem2 都是尾后迭代器，也什么都不会发生。
+
+9.26
+int ia[] = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 55, 89 };
+
+vector<int> vec(ia,end(ia));
+list<list> lst(vec.begin(), vec.end());
+
+for (auto it = lst.begin(); it != lst.end(); ){
+	if (*it & 0x1)
+		it = lst.erase(it);
+	else 
+		++it;
+ }
+
+for (auto it = vec.begin(); it != vec.end(); ){
+	if (!(*it & 0x1))
+		it = vec.erase(it);//是用单迭代器版本的erase从list中删除奇数元素，从vector中删除偶数元素。
+	else
+		++it;			
+}
