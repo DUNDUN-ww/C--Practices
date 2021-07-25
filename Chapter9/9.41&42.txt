@@ -1,0 +1,6 @@
+9.41
+ vector<char> v{ 'h', 'e', 'l', 'l', 'o' };//从一个vector<char>初始化一个string
+ string str(v.cbegin(), v.cend());
+
+9.42
+ 使用 reserve(100) 函数预先分配100个元素的空间。
