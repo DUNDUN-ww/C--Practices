@@ -1,0 +1,16 @@
+9.31
+iter += 2;
+因为复合赋值语句只能用于string、vector、deque、array，所以要改为：
+++iter;
+++iter;
+
+如果是forward_list的话，要增加一个首先迭代器prev：
+auto prev = flst.before_begin();
+//...
+curr == flst.insert_after(prev, *curr);
+++curr; ++curr;
+++prev; ++prev;
+
+
+9.32
+iter = vi.insert(iter, *iter++);//不合法。因为参数的求值顺序是未指定的。
