@@ -1,0 +1,11 @@
+9.33
+如果不将insert的结果赋予begin，begin将会失效。
+
+9.34
+iter = vi.begin();
+while (iter != vi.end()){
+	if (*iter % 2){
+		iter = vi.insert(iter, *iter);}
+	++iter;
+  }
+//循环永远不会结束。
