@@ -1,0 +1,1 @@
+假定name和numbers的定义如325页所示，numbers.find(name)返回string::npos。
